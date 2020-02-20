@@ -26,7 +26,6 @@ if __name__ == '__main__':
     L_order = [l for l in range(L)]
     L_order = sorted(L_order, key=lambda x: L_info[x][2], reverse=True)
 
-
     seen_b = set()
     for l in L_order:
         bks = L_info[l][1]
@@ -40,17 +39,30 @@ if __name__ == '__main__':
         L_info[l][1] = bks
         L_info[l][2] = b_sum
 
-    L_order = sorted(L_order, key=lambda x: L_info[x][2], reverse=True)
+    L_order = sorted(L_order, key=lambda x: (L_info[x][0][1], - L_info[x][2]))
+    # L_order = sorted(L_order, key=lambda x: L_info[x][2], reverse=True)
 
-    n_l = [c for c in L_order if len(L_info[c][1]) is not 0]
-    print(len(n_l))
+    # print(D)
+    d=0
+    scr = 0
     for l in L_order:
-        n_b = len(L_info[l][1])
-        if n_b is 0: continue
-        print(l, n_b)
-        for b in L_info[l][1]:
-            print(b, end=' ')
-        print()
+        while(d<700):
+            if(L_info[l][2]<53718):continue
+            d += L_info[l][0][1]
+            scr += L_info[l][2]
+        # print(L_info[l][0][1], L_info[l][2])
+    avg = scr//L
+    print(scr)
+
+    # n_l = [c for c in L_order if len(L_info[c][1]) is not 0 and L_info[c][2]<avg]
+    # print(len(n_l))
+    # for l in n_l:
+    #     n_b = len(L_info[l][1])
+    #     # if n_b is 0 and L_info[l][2]<avg: continue
+    #     print(l, n_b)
+    #     for b in L_info[l][1]:
+    #         print(b, end=' ')
+    #     print()
 
 
 
