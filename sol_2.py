@@ -22,18 +22,16 @@ if __name__ == '__main__':
     L_order = [l for l in range(L)]
     L_order = sorted(L_order, key=lambda x: (L_info[x][0][1], - L_info[x][2]))
 
+    print(D, L_info[L_order[0]][0][1])
+    # n_l = [c for c in L_order if len(L_info[c][1]) is not 0]
+    # print(len(n_l))
     # for l in L_order:
-    #     print(L_info[l])
-
-    n_l = [c for c in L_order if len(L_info[c][1]) is not 0]
-    print(len(n_l))
-    for l in L_order:
-        n_b = len(L_info[l][1])
-        if n_b is 0: continue
-        print(l, n_b)
-        for b in L_info[l][1]:
-            print(b, end=' ')
-        print()
+    #     n_b = len(L_info[l][1])
+    #     if n_b is 0: continue
+    #     print(l, n_b)
+    #     for b in L_info[l][1]:
+    #         print(b, end=' ')
+        # print()
 
 
 

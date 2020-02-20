@@ -21,9 +21,8 @@ if __name__ == '__main__':
 
     L_order = [l for l in range(L)]
     L_order = sorted(L_order, key=lambda x: L_info[x][2], reverse=True)
-    print(D)
     for l in L_order:
-        print(l, L_info[l][0][1])
+        print(l, L_info[l][0][1], L_info[l][1], L_info[l][2])
     print()
 
     # n_l = [c for c in L_order if len(L_info[c][1]) is not 0]
