@@ -19,14 +19,16 @@ if __name__ == '__main__':
         L_info[i][1] = books
         L_info[i][2] = b_sum
 
-    # L_order = [s for s in L_info[s][2]]
-    # L_order = sorted(L_order)
+    L_order = [l for l in range(L)]
+    L_order = sorted(L_order, key=lambda x: L_info[x][2], reverse=True)
 
-    # print(L_order)
-
-    # print(B, L, D)
-    # print(B_scores)
-    print(L_info)
+    print(len(L_order))
+    for l in L_order:
+        n_b = len(L_info[l][1])
+        print(l, n_b)
+        for b in L_info[l][1]:
+            print(b, end=' ')
+        print()
 
 
 
